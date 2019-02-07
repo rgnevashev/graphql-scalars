@@ -1,6 +1,6 @@
 {
   "name": "graphql-all-scalars",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "GraphQL Scalars All in One",
   "main": "src/index.js",
   "scripts": {
