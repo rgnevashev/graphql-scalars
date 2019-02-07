@@ -19,7 +19,7 @@ module.exports = new GraphQLScalarType({
     }
 
     if (!EMAIL_ADDRESS_REGEX.test(value)) {
-      throw new TypeError(`Value is not a valid email address: ${value}`)
+      throw new TypeError(`Expected email address value but got: ${value}`)
     }
 
     return value.toLowerCase()
@@ -31,7 +31,7 @@ module.exports = new GraphQLScalarType({
     }
 
     if (!EMAIL_ADDRESS_REGEX.test(value)) {
-      throw new TypeError(`Value is not a valid email address: ${value}`)
+      throw new TypeError(`Expected email address value but got: ${value}`)
     }
 
     return value.toLowerCase()
@@ -43,7 +43,7 @@ module.exports = new GraphQLScalarType({
     }
 
     if (!EMAIL_ADDRESS_REGEX.test(ast.value)) {
-      throw new TypeError(`Value is not a valid email address: ${ast.value}`)
+      throw new TypeError(`Expected email address value but got: ${ast.value}`)
     }
 
     return ast.value.toLowerCase()
