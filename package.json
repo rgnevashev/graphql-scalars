@@ -1,0 +1,52 @@
+{
+  "name": "graphql-all-scalars",
+  "version": "1.0.0",
+  "description": "GraphQL Scalars All in One",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "eslint src",
+    "prettier": "prettier --write src/**/*.js",
+    "release:major": "changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags && npm publish",
+    "release:minor": "changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags && npm publish",
+    "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags && npm publish"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rgnevashev/graphql-scalars"
+  },
+  "keywords": [
+    "graphql",
+    "scalars"
+  ],
+  "author": "Roman Karmatsky <rgnevashev@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rgnevashev/graphql-scalars/issues"
+  },
+  "homepage": "https://github.com/rgnevashev/graphql-scalars#readme",
+  "dependencies": {
+    "date-fns": "^1.30.1",
+    "libphonenumber-js": "^1.7.8",
+    "underscore.string": "^3.3.5"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "generate-changelog": "^1.7.1",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.3",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.9",
+    "prettier": "^1.16.4"
+  },
+  "peerDependencies": {
+    "graphql": ">=14"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}

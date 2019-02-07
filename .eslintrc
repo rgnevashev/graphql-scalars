@@ -1,0 +1,22 @@
+{
+  "extends": ["last", "prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "printWidth": 160,
+        "singleQuote": true,
+        "semi": false,
+        "trailingComma": "none",
+        "bracketSpacing": true,
+        "jsxBracketSameLine": false,
+        "proseWrap": "never",
+        "arrowParens": "avoid"
+      }
+    ]
+  },
+  "env": {
+    "node": true
+  }
+}

@@ -1,0 +1,29 @@
+/** @format */
+
+const { GraphQLScalarType } = require('graphql')
+const { GraphQLError } = require('graphql/error')
+const { Kind } = require('graphql/language')
+
+const { processValue, VALIDATIONS } = require('./utilities')
+
+module.exports = new GraphQLScalarType({
+  name: 'PositiveInt',
+
+  description: 'Integers that will have a value greater than 0.',
+
+  serialize(value) {
+    return processValue(value, VALIDATIONS.PositiveInt)
+  },
+
+  parseValue(value) {
+    return processValue(value, VALIDATIONS.PositiveInt)
+  },
+
+  parseLiteral(ast) {
+    if (ast.kind !== Kind.INT) {
+      throw new GraphQLError(`Can only validate integers as positive integers but got a: ${ast.kind}`)
+    }
+
+    return processValue(ast.value, VALIDATIONS.PositiveInt)
+  }
+})
