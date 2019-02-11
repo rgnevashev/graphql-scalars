@@ -1,6 +1,6 @@
 {
   "name": "@tiggastudios/graphql-scalars",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "GraphQL Scalars All in One",
   "main": "lib/index.js",
   "scripts": {
